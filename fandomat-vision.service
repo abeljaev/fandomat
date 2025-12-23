@@ -1,0 +1,24 @@
+[Unit]
+Description=Fandomat Vision Inference Service
+Documentation=file:///home/radxa/WS_Bottles/README.md
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=radxa
+Group=radxa
+SupplementaryGroups=video
+WorkingDirectory=/home/radxa/WS_Bottles
+EnvironmentFile=-/home/radxa/WS_Bottles/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/radxa/WS_Bottles/.venv/bin/python -m vision.inference_service
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fandomat-vision
+
+[Install]
+WantedBy=multi-user.target

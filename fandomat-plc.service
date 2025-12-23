@@ -1,0 +1,25 @@
+[Unit]
+Description=Fandomat PLC Application Service
+Documentation=file:///home/radxa/WS_Bottles/README.md
+After=fandomat-vision.service network.target
+Requires=fandomat-vision.service
+Wants=network.target
+
+[Service]
+Type=simple
+User=radxa
+Group=radxa
+SupplementaryGroups=dialout
+WorkingDirectory=/home/radxa/WS_Bottles
+EnvironmentFile=-/home/radxa/WS_Bottles/.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/home/radxa/WS_Bottles/.venv/bin/python -m plc.application
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fandomat-plc
+
+[Install]
+WantedBy=multi-user.target

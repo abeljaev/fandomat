@@ -1,0 +1,20 @@
+description: Ultralytics YOLO11s-cls model trained on /mnt/disk01/codebase/av.beliaev5/digital-neurobot/dataset_cls
+author: Ultralytics
+date: '2025-12-16T18:44:36.183787'
+version: 8.3.239
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 1
+task: classify
+batch: 1
+imgsz:
+- 1280
+- 1280
+names:
+  0: CAN
+  1: FOREIGN
+  2: PET
+args:
+  batch: 1
+  name: rk3588
+channels: 3
