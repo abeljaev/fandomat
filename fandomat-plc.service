@@ -10,10 +10,10 @@ Type=simple
 User=radxa
 Group=radxa
 SupplementaryGroups=dialout
-WorkingDirectory=/home/radxa/WS_Bottles/fandomat
-EnvironmentFile=-/home/radxa/WS_Bottles/fandomat/.env
+WorkingDirectory=/home/radxa/WS_Bottles
+EnvironmentFile=-/home/radxa/WS_Bottles/.env
 Environment=PYTHONUNBUFFERED=1
-ExecStart=/home/radxa/WS_Bottles/fandomat/.venv/bin/python -m plc.application
+ExecStart=/home/radxa/WS_Bottles/.venv/bin/python -m plc.application
 Restart=on-failure
 RestartSec=5
 TimeoutStopSec=10
